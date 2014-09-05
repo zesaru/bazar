@@ -1,0 +1,63 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Empresas list</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombredeempresa</th>
+                <th>Direccion</th>
+                <th>Telefono</th>
+                <th>Email</th>
+                <th>Personadecontacto</th>
+                <th>Serviciooproducto</th>
+                <th>Web</th>
+                <th>Facebook</th>
+                <th>Comentario</th>
+                <th>Comentarios</th>
+                <th>Fechadeincripcion</th>
+                <th>Flag</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('empresas_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ entity.nombredeempresa }}</td>
+                <td>{{ entity.direccion }}</td>
+                <td>{{ entity.telefono }}</td>
+                <td>{{ entity.email }}</td>
+                <td>{{ entity.personadecontacto }}</td>
+                <td>{{ entity.serviciooproducto }}</td>
+                <td>{{ entity.web }}</td>
+                <td>{{ entity.facebook }}</td>
+                <td>{{ entity.comentario }}</td>
+                <td>{{ entity.comentarios }}</td>
+                <td>{% if entity.fechadeincripcion %}{{ entity.fechadeincripcion|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ entity.flag }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('empresas_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('empresas_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('empresas_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

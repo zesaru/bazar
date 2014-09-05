@@ -1,0 +1,12 @@
+empresas:
+    path:     /
+    defaults: { _controller: BazarBundle:Empresas:index }
+
+empresas_new:
+    pattern:  /new
+    defaults: { _controller: "BazarBundle:Empresas:new" }
+
+empresas_create:
+    pattern:  /create
+    defaults: { _controller: "BazarBundle:Empresas:create" }
+    requirements: { _method: post }

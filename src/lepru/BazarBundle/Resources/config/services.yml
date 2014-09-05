@@ -1,0 +1,7 @@
+parameters:
+#    bazar.example.class: lepru\BazarBundle\Example
+
+services:
+#    bazar.example:
+#        class: %bazar.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

@@ -1,0 +1,4 @@
+bazar:
+    resource: "@BazarBundle/Resources/config/routing.yml"
+    prefix:   /
+
