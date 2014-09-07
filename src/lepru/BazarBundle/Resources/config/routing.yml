@@ -10,3 +10,11 @@ empresas_create:
     pattern:  /create
     defaults: { _controller: "BazarBundle:Empresas:create" }
     requirements: { _method: post }
+
+empresas_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "BazarBundle:Empresas:show" }
+
+empresas_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "BazarBundle:Empresas:edit" }

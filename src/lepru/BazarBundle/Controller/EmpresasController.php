@@ -51,9 +51,10 @@ class EmpresasController extends Controller
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->persist($entity);
+            $entity -> setFechadeincripcion(new \DateTime());
             $em->flush();
 
-            return $this->redirect($this->generateUrl('empresas_show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('empresas', array('id' => $entity->getId())));
         }
 
         return array(

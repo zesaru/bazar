@@ -80,7 +80,7 @@ class Empresas
     /**
      * @var string
      *
-     * @ORM\Column(name="comentario", type="string", length=255)
+     * @ORM\Column(name="comentario", type="string", nullable=true, length=255)
      */
     private $comentario;
 
@@ -101,7 +101,7 @@ class Empresas
     /**
      * @var string
      *
-     * @ORM\Column(name="flag", type="string", length=255)
+     * @ORM\Column(name="flag", type="string", nullable=true, length=255)
      */
     private $flag;
 
