@@ -18,3 +18,8 @@ empresas_show:
 empresas_edit:
     pattern:  /{id}/edit
     defaults: { _controller: "BazarBundle:Empresas:edit" }
+
+empresas_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "BazarBundle:Empresas:delete" }
+    requirements: { _method: post }

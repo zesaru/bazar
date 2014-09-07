@@ -87,7 +87,7 @@ class Empresas
     /**
      * @var string
      *
-     * @ORM\Column(name="comentarios", type="text")
+     * @ORM\Column(name="comentarios", nullable=true, type="text")
      */
     private $comentarios;
 

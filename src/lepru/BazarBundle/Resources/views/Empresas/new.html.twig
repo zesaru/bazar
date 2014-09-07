@@ -1,15 +1,151 @@
 {% extends '::base.html.twig' %}
 
+{% block stylesheets %}
+    <link href="{{ asset('bundles/bazar/css/styles.css') }}" rel="stylesheet"
+type="text/css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+{% endblock %}
+
 {% block body -%}
-    <h1>Inscripción de Empresas</h1>
+<div class="container theme-showcase" role="main">
+	<div class="navbar navbar-inverse navbar-fixed-top">
+		<div class="nav-header">
+			<a href="" class="navbar-brand" >Embajada del Perú en Japón</a>
+		</div>
+	</div>
+</div>
+<br>
+<br>
+	<div class="container theme-showcase">
+	    <h1>Inscripción de Empresas para el Perú Charity Market</h1>
+		<form role="form" class="form-horizontal" action="{{ path('empresas_create') }}" method="post" {{ form_enctype(form) }}>
 
-    {{ form(form) }}
-
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('empresas') }}">
-            Back to the list
-        </a>
-    </li>
-</ul>
+			<div class="form-group">
+				<div class="col-sm-2">
+					{{ form_label (form.nombredeempresa, 'Nombre de la Empresa')}}
+				</div>
+	      		<div class="col-sm-3">	
+			        {{ form_errors (form.nombredeempresa) }} 
+			        
+			        {{form_widget(form.nombredeempresa, { 'attr': {
+			            'class':"form-control",
+			            'placeholder':"Nombre de la Empresa",}}
+			        )}}
+			    </div>
+			</div>
+			{# direccion #}
+			<div class="form-group">
+				<div class="col-sm-2">
+					{{ form_label (form.direccion, 'Dirección de la Empresa')}}
+				</div>
+	      		<div class="col-sm-4">	
+			        {{ form_errors (form.direccion) }} 
+			        
+			        {{form_widget(form.direccion, { 'attr': {
+			            'class':"form-control",
+			            'placeholder':"Dirección de la Empresa",}}
+			        )}}
+			    </div>
+			</div>
+			{# telefono #}
+			<div class="form-group">
+				<div class="col-sm-2">
+					{{ form_label (form.telefono, 'Teléfono')}}
+				</div>
+	      		<div class="col-sm-2">	
+			        {{ form_errors (form.telefono) }} 
+			        
+			        {{form_widget(form.telefono, { 'attr': {
+			            'class':"form-control",
+			            'placeholder':"Telefono",}}
+			        )}}
+			    </div>
+			</div>
+			{# email #}
+			<div class="form-group">
+				<div class="col-sm-2">
+					{{ form_label (form.email, 'Email')}}
+				</div>
+	      		<div class="col-sm-3">	
+			        {{ form_errors (form.email) }} 
+			        
+			        {{form_widget(form.email, { 'attr': {
+			            'class':"form-control",
+			            'placeholder':"Email",}}
+			        )}}
+			    </div>
+			</div>
+			{# personadecontacto #}
+			<div class="form-group">
+				<div class="col-sm-2">
+					{{ form_label (form.personadecontacto, 'Persona de Contacto')}}
+				</div>
+	      		<div class="col-sm-3">	
+			        {{ form_errors (form.personadecontacto) }} 
+			        
+			        {{form_widget(form.personadecontacto, { 'attr': {
+			            'class':"form-control",
+			            'placeholder':"Persona de Contacto",}}
+			        )}}
+			    </div>
+			</div>
+			{# serviciooproducto #}
+			<div class="form-group">
+				<div class="col-sm-2">
+					{{ form_label (form.serviciooproducto, 'Servicio o producto que ofrece')}}
+				</div>
+	      		<div class="col-sm-3">	
+			        {{ form_errors (form.serviciooproducto) }} 
+			        {{form_widget(form.serviciooproducto, { 'attr': {
+			            'class':"form-control",
+			            'placeholder':"Servicio o producto que ofrece",}}
+			        )}}
+			    </div>
+			</div>
+			{# web #}
+			<div class="form-group">
+				<div class="col-sm-2">
+					{{ form_label (form.web, 'Pagina Web')}}
+				</div>
+	      		<div class="col-sm-3">	
+			        {{ form_errors (form.web) }} 
+			        {{form_widget(form.web, { 'attr': {
+			            'class':"form-control",
+			            'placeholder':"Pagina Web",}}
+			        )}}
+			    </div>
+			</div>
+			{# facebook #}
+			<div class="form-group">
+				<div class="col-sm-2">
+					{{ form_label (form.facebook, 'Pagina Facebook')}}
+				</div>
+	      		<div class="col-sm-3">	
+			        {{ form_errors (form.facebook) }} 
+			        {{form_widget(form.facebook, { 'attr': {
+			            'class':"form-control",
+			            'placeholder':"Pagina Facebook",}}
+			        )}}
+			    </div>
+			</div>
+			{# comentarios #}
+			<div class="form-group">
+				<div class="col-sm-2">
+					{{ form_label (form.comentarios, 'Comentarios')}}
+				</div>
+	      		<div class="col-sm-4">	
+			        {{ form_errors (form.comentarios) }} 
+			        {{form_widget(form.comentarios, { 'attr': {
+			            'class':"form-control",
+			            'placeholder':"Comentarios",}}
+			        )}}
+			    </div>
+			</div>
+			<div>
+	            {{ form_widget(form._token) }}
+	        </div>
+			<button type="submit" class="btn btn-primary">Guardar</button>
+		</form>
+	</div>
+</div>
 {% endblock %}

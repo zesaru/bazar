@@ -1,5 +1,9 @@
 {% extends '::base.html.twig' %}
-
+{% block stylesheets %}
+    <link href="{{ asset('bundles/bazar/css/styles.css') }}" rel="stylesheet"
+type="text/css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+{% endblock %}
 {% block body -%}
     <h1>Empresas list</h1>
 
