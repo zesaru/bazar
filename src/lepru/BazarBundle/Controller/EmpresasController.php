@@ -54,7 +54,8 @@ class EmpresasController extends Controller
             $entity -> setFechadeincripcion(new \DateTime());
             $em->flush();
 
-            return $this->redirect($this->generateUrl('empresas', array('id' => $entity->getId())));
+            return $this->redirect("http://embajadadelperuenjapon.org/peru-charity-market/");
+                //$this->generateUrl('empresas', ));
         }
 
         return array(
