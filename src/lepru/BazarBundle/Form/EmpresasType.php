@@ -27,6 +27,8 @@ class EmpresasType extends AbstractType
             ->add('comentarios')
             //->add('fechadeincripcion')
             //->add('flag')
+            ->add('gerenteg')
+            ->add('nombrepro')
         ;
     }
     

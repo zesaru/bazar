@@ -75,6 +75,34 @@ type="text/css" />
 			        )}}
 			    </div>
 			</div>
+            {# nombrepro #}
+            <div class="form-group">
+                <div class="col-sm-2">
+                    {{ form_label (form.nombrepro, 'Nombre del Propietario de la Empresa')}}
+                </div>
+                <div class="col-sm-3">
+                    {{ form_errors (form.nombrepro) }}
+
+                    {{form_widget(form.nombrepro, { 'attr': {
+                    'class':"form-control",
+                    'placeholder':"Nombre del propietario de la Empresa",}}
+                    )}}
+                </div>
+            </div>
+            {# gerenteg #}
+            <div class="form-group">
+                <div class="col-sm-2">
+                    {{ form_label (form.gerenteg, 'Gerente General de la Empresa')}}
+                </div>
+                <div class="col-sm-3">
+                    {{ form_errors (form.gerenteg) }}
+
+                    {{form_widget(form.gerenteg, { 'attr': {
+                    'class':"form-control",
+                    'placeholder':"Gerente General de la Empresa",}}
+                    )}}
+                </div>
+            </div>
 			{# personadecontacto #}
 			<div class="form-group">
 				<div class="col-sm-2">
@@ -92,7 +120,7 @@ type="text/css" />
 			{# serviciooproducto #}
 			<div class="form-group">
 				<div class="col-sm-2">
-					{{ form_label (form.serviciooproducto, 'Servicio o producto que ofrece')}}
+					{{ form_label (form.serviciooproducto, 'Servicios o productos que ofrece')}}
 				</div>
 	      		<div class="col-sm-3">	
 			        {{ form_errors (form.serviciooproducto) }} 
